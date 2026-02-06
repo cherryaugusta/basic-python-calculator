@@ -79,4 +79,4 @@ It is not intended for production use or critical financial calculations.
 ## License
 
 This project is licensed under the MIT License.
-See the LICENSE file for details.
+See the [LICENSE](https://github.com/cherryaugusta/basic-python-calculator/blob/main/LICENSE) file for details.
