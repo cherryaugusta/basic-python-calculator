@@ -3,45 +3,39 @@ Basic Python Calculator
 
 Features:
 - Object-oriented design
-- Input validation
-- Loop-based menu system
-- Safe division handling
+- Clear separation of logic and UI
+- Safe exception-based error handling
+- Designed for automated unit testing
 """
 
 from typing import Union
-
 
 Number = Union[int, float]
 
 
 class Calculator:
     """
-    A basic calculator that performs arithmetic operations
-    on two numbers provided at initialization.
+    Stateless calculator providing basic arithmetic operations.
     """
 
-    def __init__(self, a: Number, b: Number) -> None:
-        self.a = a
-        self.b = b
+    def add(self, a: Number, b: Number) -> Number:
+        return a + b
 
-    def add(self) -> Number:
-        return self.a + self.b
+    def subtract(self, a: Number, b: Number) -> Number:
+        return a - b
 
-    def subtract(self) -> Number:
-        return self.a - self.b
+    def multiply(self, a: Number, b: Number) -> Number:
+        return a * b
 
-    def multiply(self) -> Number:
-        return self.a * self.b
-
-    def divide(self) -> Union[Number, str]:
-        if self.b == 0:
-            return "Error: Division by zero is not allowed"
-        return self.a / self.b
+    def divide(self, a: Number, b: Number) -> Number:
+        if b == 0:
+            raise ZeroDivisionError("Division by zero is not allowed")
+        return a / b
 
 
 def _read_number(prompt: str) -> Number:
     """
-    Reads a number from user input with validation.
+    Reads a numeric value from user input with validation.
     """
     while True:
         try:
@@ -65,30 +59,33 @@ def _print_menu() -> None:
 
 def run_calculator() -> None:
     """
-    Runs the calculator program in a loop until the user exits.
+    Runs the interactive calculator loop.
     """
+    calculator = Calculator()
+
     while True:
         a = _read_number("Enter a: ")
         b = _read_number("Enter b: ")
 
-        calculator = Calculator(a, b)
-
         _print_menu()
         choice = input("Your choice: ").strip()
 
-        if choice == "1":
-            print(f"Result: {calculator.add()}")
-        elif choice == "2":
-            print(f"Result: {calculator.subtract()}")
-        elif choice == "3":
-            print(f"Result: {calculator.multiply()}")
-        elif choice == "4":
-            print(f"Result: {calculator.divide()}")
-        elif choice == "0":
-            continue
-        else:
-            print("Exiting calculator.")
-            break
+        try:
+            if choice == "1":
+                print(f"Result: {calculator.add(a, b)}")
+            elif choice == "2":
+                print(f"Result: {calculator.subtract(a, b)}")
+            elif choice == "3":
+                print(f"Result: {calculator.multiply(a, b)}")
+            elif choice == "4":
+                print(f"Result: {calculator.divide(a, b)}")
+            elif choice == "0":
+                continue
+            else:
+                print("Exiting calculator.")
+                break
+        except ZeroDivisionError as exc:
+            print(f"Error: {exc}")
 
 
 if __name__ == "__main__":
