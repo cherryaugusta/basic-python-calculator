@@ -72,10 +72,4 @@ It is not intended for production use or critical financial calculations.
 
 ## License
 
-This project is licensed under the MIT License.
-<<<<<<< HEAD
-See the [LICENSE](https://github.com/cherryaugusta/basic-python-calculator/blob/main/LICENSE) file for details.
-=======
-
-See the LICENSE file for details.
->>>>>>> bca86bd (Refactor calculator logic and add automated pytest suite)
+This project is licensed under the MIT License. See the [LICENSE](https://github.com/cherryaugusta/basic-python-calculator/blob/main/LICENSE) file for details.
