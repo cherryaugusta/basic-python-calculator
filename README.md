@@ -1,82 +1,81 @@
-# Basic Python Calculator
+# Basic Python Calculator (OOP)
 
 ## Overview
 
-This project is a clean and well-structured **basic Python calculator** implemented using object-oriented programming principles.  
-It demonstrates how even a simple problem can be solved using readable, maintainable, and professional Python code.
+This repository contains a command-line calculator implemented in Python using object-oriented design principles.  
+While the arithmetic itself is simple, the project emphasizes **software craftsmanship**, clean architecture, and professional testing practices.
 
-The calculator runs in the command line and allows users to perform basic arithmetic operations interactively.
+---
 
-## Features
+## Technical Highlights
 
-- Object-oriented design using a `Calculator` class
-- Safe handling of invalid numeric input
-- Menu-driven command-line interface
-- Graceful handling of division by zero
-- Clear separation of concerns
-- Fully runnable as a standalone Python script
+- Stateless `Calculator` class for testability
+- Complete separation of core logic and CLI interface
+- Automated unit testing with pytest
+- Defensive programming with explicit exception handling
+- No external runtime dependencies
+
+---
 
 ## Project Structure
 
+```
 basic-python-calculator/
-├── basic_calculator.py
+├── basic_calculator.py   # Core logic + CLI entry point
+├── test_calculator.py    # Automated unit tests
 ├── README.md
 ├── LICENSE
 └── .gitignore
+```
 
-## Requirements
+---
 
-- Python 3.8 or higher
-- No external dependencies
+## Running the Calculator
 
-## How to Run
-
-Clone the repository and run the script:
-
-```bash
+```
 python basic_calculator.py
 ```
 
-## Example Usage
+---
 
-Enter a: 10
-Enter b: 5
+## Running Tests
 
-Choose an operation:
-1 - Addition
-2 - Subtraction
-3 - Multiplication
-4 - Division
-0 - Restart
-Any other key - Exit
+Install pytest if needed:
 
-Your choice: 4
-Result: 2.0
+```
+pip install pytest
+```
 
-## Design Highlights
+Run the test suite:
 
-• Uses a class to encapsulate arithmetic behavior
-• Validates user input to prevent runtime crashes
-• Keeps logic modular and readable
-• Avoids unnecessary complexity while maintaining clarity
-• Easily extensible for future enhancements
+```
+pytest -v
+```
 
-## Possible Extensions
+---
 
-This project is intentionally kept simple, but it can be extended with:
-• Calculation history
-• Memory functions
-• Unit tests
-• Command-line arguments
-• Graphical user interface (GUI)
-• Modular package structure
+## Why This Project Matters
+
+• Demonstrates understanding of the Software Development Life Cycle
+• Shows the difference between manual testing and automated verification
+• Uses industry-standard error handling patterns
+• Mirrors structure used in real-world Python projects
+
+---
 
 ## Disclaimer
 
 This project is created strictly for educational purposes and portfolio demonstration only.
 It is not intended for production use or critical financial calculations.
 
+---
+
 ## License
 
 This project is licensed under the MIT License.
+<<<<<<< HEAD
 See the [LICENSE](https://github.com/cherryaugusta/basic-python-calculator/blob/main/LICENSE) file for details.
+=======
+
+See the LICENSE file for details.
+>>>>>>> bca86bd (Refactor calculator logic and add automated pytest suite)
